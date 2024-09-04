@@ -1,0 +1,1 @@
+该项目使用VScode的Embedded IDE插件进行开发，但同时在VScode文件夹中导出了一个Keil项目文件，点击打开即可
