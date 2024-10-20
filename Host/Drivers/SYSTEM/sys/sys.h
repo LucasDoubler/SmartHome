@@ -1,27 +1,4 @@
-/**
- ****************************************************************************************************
- * @file        sys.h
- * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
- * @version     V1.1
- * @date        2022-09-06
- * @brief       ÏµÍ³³õÊ¼»¯´úÂë(°üÀ¨Ê±ÖÓÅäÖÃ/ÖĞ¶Ï¹ÜÀí/GPIOÉèÖÃµÈ)
- * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
- ****************************************************************************************************
- * @attention
- *
- * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó °¢²¨ÂŞ H743¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
- *
- * ĞŞ¸ÄËµÃ÷
- * V1.0 20220906
- * µÚÒ»´Î·¢²¼
- * V1.0 20220906
- * 1, ½«Í·ÎÄ¼ş°üº¬Â·¾¶¸Ä³ÉÏà¶ÔÂ·¾¶,±ÜÃâÖØ¸´ÉèÖÃ°üº¬Â·¾¶µÄÂé·³
- ****************************************************************************************************
- */
+
 
 #ifndef _SYS_H
 #define _SYS_H
@@ -32,27 +9,27 @@
 
 
 /**
- * SYS_SUPPORT_OSÓÃÓÚ¶¨ÒåÏµÍ³ÎÄ¼ş¼ĞÊÇ·ñÖ§³ÖOS
- * 0,²»Ö§³ÖOS
- * 1,Ö§³ÖOS
+ * SYS_SUPPORT_OSç”¨äºå®šä¹‰ç³»ç»Ÿæ–‡ä»¶å¤¹æ˜¯å¦æ”¯æŒOS
+ * 0,ä¸æ”¯æŒOS
+ * 1,æ”¯æŒOS
  */
 #define SYS_SUPPORT_OS         1
 
 
 #define      ON      1
 #define      OFF     0
-#define      Write_Through()    do{ *(__IO uint32_t*)0XE000EF9C = 1UL << 2; }while(0)     /* CacheÍ¸Ğ´Ä£Ê½ */
+#define      Write_Through()    do{ *(__IO uint32_t*)0XE000EF9C = 1UL << 2; }while(0)     /* Cacheé€å†™æ¨¡å¼ */
 
-void sys_nvic_set_vector_table(uint32_t baseaddr, uint32_t offset);                       /* ÉèÖÃÖĞ¶ÏÆ«ÒÆÁ¿ */
-void sys_cache_enable(void);                                                              /* Ê¹ÄÜSTM32H7µÄL1-Cahce */
-uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32_t pllq); /* ÅäÖÃÏµÍ³Ê±ÖÓ */
+void sys_nvic_set_vector_table(uint32_t baseaddr, uint32_t offset);                       /* è®¾ç½®ä¸­æ–­åç§»é‡ */
+void sys_cache_enable(void);                                                              /* ä½¿èƒ½STM32H7çš„L1-Cahce */
+uint8_t sys_stm32_clock_init(uint32_t plln, uint32_t pllm, uint32_t pllp, uint32_t pllq); /* é…ç½®ç³»ç»Ÿæ—¶é’Ÿ */
 
 
-/* ÒÔÏÂÎª»ã±àº¯Êı */
-void sys_wfi_set(void);             /* Ö´ĞĞWFIÖ¸Áî */
-void sys_intx_disable(void);        /* ¹Ø±ÕËùÓĞÖĞ¶Ï */
-void sys_intx_enable(void);         /* ¿ªÆôËùÓĞÖĞ¶Ï */
-void sys_msr_msp(uint32_t addr);    /* ÉèÖÃÕ»¶¥µØÖ· */
+/* ä»¥ä¸‹ä¸ºæ±‡ç¼–å‡½æ•° */
+void sys_wfi_set(void);             /* æ‰§è¡ŒWFIæŒ‡ä»¤ */
+void sys_intx_disable(void);        /* å…³é—­æ‰€æœ‰ä¸­æ–­ */
+void sys_intx_enable(void);         /* å¼€å¯æ‰€æœ‰ä¸­æ–­ */
+void sys_msr_msp(uint32_t addr);    /* è®¾ç½®æ ˆé¡¶åœ°å€ */
 
 #endif
 
