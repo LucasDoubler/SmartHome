@@ -5,26 +5,7 @@
 #include "./SYSTEM/usart/usart.h"
 #include "./SYSTEM/delay/delay.h"
  
- 
- /**
- * @brief       设置某个区域的MPU保护
- * @param       baseaddr:MPU保护区域的基址(首地址)
- *              size:MPU保护区域的大小(必须是32的倍数,单位为字节),可设置的值参考:CORTEX_MPU_Region_Size
- *              rnum:MPU保护区编号,范围:0~7,最大支持8个保护区域,可设置的值参考：CORTEX_MPU_Region_Number
- *              ap:访问权限,访问关系如下:可设置的值参考：CORTEX_MPU_Region_Permission_Attributes
- *              MPU_REGION_NO_ACCESS,无访问（特权&用户都不可访问）
- *              MPU_REGION_PRIV_RW,仅支持特权读写访问
- *              MPU_REGION_PRIV_RW_URO,禁止用户写访问（特权可读写访问）
- *              MPU_REGION_FULL_ACCESS,全访问（特权&用户都可访问）
- *              MPU_REGION_PRIV_RO,仅支持特权读访问
- *              MPU_REGION_PRIV_RO_URO,只读（特权&用户都不可以写）
- *              详见:STM32F7编程手册.pdf,4.6节,Table 89.
- *              sen:是否允许共用;MPU_ACCESS_NOT_SHAREABLE,不允许;MPU_ACCESS_SHAREABLE,允许
- *              cen:是否允许cache;MPU_ACCESS_NOT_CACHEABLE,不允许;MPU_ACCESS_CACHEABLE,允许
- *              ben:是否允许缓冲;MPU_ACCESS_NOT_BUFFERABLE,不允许;MPU_ACCESS_BUFFERABLE,允许
- * @retval      0,成功.
- *              其他,错误.
- */
+
 uint8_t mpu_set_protection(uint32_t baseaddr, uint32_t size, uint32_t rnum, uint8_t ap, uint8_t sen, uint8_t cen, uint8_t ben)
 {
     MPU_Region_InitTypeDef mpu_initure;
