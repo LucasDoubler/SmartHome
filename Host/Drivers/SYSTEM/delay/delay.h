@@ -1,27 +1,4 @@
-/**
- ****************************************************************************************************
- * @file        delay.h
- * @author      ÕıµãÔ­×ÓÍÅ¶Ó(ALIENTEK)
- * @version     V1.0
- * @date        2022-09-06
- * @brief       Ê¹ÓÃSysTickµÄÆÕÍ¨¼ÆÊıÄ£Ê½¶ÔÑÓ³Ù½øĞĞ¹ÜÀí(Ö§³Öucosii)
- *              Ìá¹©delay_init³õÊ¼»¯º¯Êı£¬ delay_usºÍdelay_msµÈÑÓÊ±º¯Êı
- * @license     Copyright (c) 2020-2032, ¹ãÖİÊĞĞÇÒíµç×Ó¿Æ¼¼ÓĞÏŞ¹«Ë¾
- ****************************************************************************************************
- * @attention
- *
- * ÊµÑéÆ½Ì¨:ÕıµãÔ­×Ó °¢²¨ÂŞ H743¿ª·¢°å
- * ÔÚÏßÊÓÆµ:www.yuanzige.com
- * ¼¼ÊõÂÛÌ³:www.openedv.com
- * ¹«Ë¾ÍøÖ·:www.alientek.com
- * ¹ºÂòµØÖ·:openedv.taobao.com
- *
- * ĞŞ¸ÄËµÃ÷
- * V1.0 20220906
- * µÚÒ»´Î·¢²¼
- *
- ****************************************************************************************************
- */
+
  
 #ifndef __DELAY_H
 #define __DELAY_H
@@ -29,9 +6,9 @@
 #include "./SYSTEM/sys/sys.h"
 
 
-void delay_init(uint16_t sysclk); /* ³õÊ¼»¯ÑÓ³Ùº¯Êı */
-void delay_ms(uint16_t nms);      /* ÑÓÊ±nms */
-void delay_us(uint32_t nus);      /* ÑÓÊ±nus */
+void delay_init(uint16_t sysclk); /* åˆå§‹åŒ–å»¶è¿Ÿå‡½æ•° */
+void delay_ms(uint16_t nms);      /* å»¶æ—¶nms */
+void delay_us(uint32_t nus);      /* å»¶æ—¶nus */
 
 #endif
 
